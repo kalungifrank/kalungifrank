@@ -1,100 +1,297 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalungi Frank</title>
+    <title>Frank Kalungi | Research Scientist & Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
+        :root {
+            --primary: #2c5282;       /* Deep blue */
+            --primary-dark: #1a365d;
+            --text: #2d3748;
+            --light: #f7fafc;
+            --gray: #718096;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--light);
+        }
+
+        /* Header & Navigation */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
             display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        #nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            width: 200px;
-            background-color: #333;
-            position: fixed;
-            height: 100%;
-            overflow: auto;
-        }
-        #nav li a {
-            display: block;
-            color: white;
-            padding: 14px 16px;
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
             text-decoration: none;
         }
-        #projects li a {
-            display: block;
-            color: black;
-            padding: 14px 16px;
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            color: var(--text);
             text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
         }
-        #nav li a:hover {
-            background-color: #111;
+
+        nav a:hover,
+        nav a.active {
+            color: var(--primary);
         }
-        .content {
-            margin-left: 210px;
-            padding: 20px;
-            flex-grow: 1;
-            overflow-y: auto;
-            height: 100vh;
+
+        /* Hamburger */
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            background: none;
+            border: none;
+            color: var(--primary);
+            cursor: pointer;
         }
+
+        /* Main Content */
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
         section {
-            padding: 20px 0;
-            border-bottom: 1px solid #ddd;
+            padding: 5rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        section:first-child {
+            padding-top: 8rem;
+        }
+
+        h1, h2 {
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+        }
+
+        .intro p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--gray);
+        }
+
+        ul.publications {
+            list-style: none;
+        }
+
+        ul.publications li {
+            margin: 1rem 0;
+        }
+
+        ul.publications a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        ul.publications a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--primary-dark);
+            color: white;
+        }
+
+        /* Responsive - Hamburger Menu */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            nav ul {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: white;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transform: translateY(-100%);
+                transition: transform 0.4s ease-in-out;
+                z-index: 999;
+            }
+
+            nav ul.active {
+                transform: translateY(0);
+            }
+
+            nav a {
+                font-size: 1.5rem;
+                padding: 1.5rem 0;
+            }
+
+            main {
+                padding: 1.5rem;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            section {
+                padding: 4rem 0;
+            }
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
         }
     </style>
 </head>
 <body>
-    <div id="nav">
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        
-    </div>
 
-    <div class="content">
-        <section id="home">
-            <h1>Home</h1>
-            <p> <strong>Hi, welcome to Frank's personal website!.</strong> <br>Frank Kalungi is a distinguished research scientist with passion in artificial intelligence and biotechnology. He is currently an indepedent developer of web, mobile and desktop apps. He has experience in Html, CSS, Javascript, python and its frameworks such as Django, Kivy and Tkinter. </p> <p>Besides programming, he is a genome engineer at the National Agricultural Research Laboratories (NARL) in Kawanda where he developed the first gene-edited East African Highland bananas. In this role, he applies skills such as CRISPR/Cas9 based genome editing, differential gene expression, molecular cloning, HPLC analysis and microbiology.  </p>
-        </section>
-        <section id="about">
-            <h1>About Me</h1>
-            <p>I am passionate about technology and I believe it has the ability to revolutionalize the future of humanity. I am self taught programmer with over 10 years experience in designing web, mobile and desktop software. I particularly drawn to the application of programming to biological science which accelerates the production of drugs, vaccines, disease-resistant crops and many other biotech products. By using technology, I hope to contribute to Africa's developing biotechnology industry through development of bioinformatics software/pipelines for drug design and genome engineering. 
-            </p>
-            <p>
-                <strong>Education Background and Professional Experience</strong> <br>
-                I have an MSc. Biochemistry and a Bsc. Biotechnology from Makerere University. I am currently a research fellow (genome editing) at NARL, Uganda and I've previously worked in Abacus Parenetral Drugs Limited and Coca-Cola Beverages Africa as a quality control officer and bioprocess engineer respectively.   
-            </p>
-            
-        </section>
-        <section id="projects">
-            <h1>Projects</h1>
-            <p>Here are some of my publications for completed projects:</p>
-            <ul>
-                <li><a href="https://link.springer.com/article/10.1007/s40203-023-00162-4">Network pharmacology and molecular docking studies of quercetin as a potential treatment for prostate cancer</a></li>
-                <li><a href="https://www.researchsquare.com/article/rs-3685735/v1">Unraveling the molecular mechanisms and targets in the treatment of rheumatoid arthritis using curcumin </a></li>
-                <li><a href="https://www.taylorfrancis.com/chapters/edit/10.1201/9781003460336-39/kava-piper-methysticum-forst-piperaceae-frank-kalungi-godwin-anywar">Kava as an hallucinogenic plant</a></li>
-            </ul>
-            <p>
-                Ongoing projects: <br>
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">Frank Kalungi</a>
+            <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
                 <ul>
-                    <li>Establishing a CRISPR/Cas9 genome editing system in East African Highland banana</li>
-                    <li>Identification of sodium glucose transporter protein-2 inhibitors via machine learning</li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home">
+            <h1>Welcome</h1>
+            <div class="intro">
+                <p><strong>Hi, welcome to my personal website!</strong></p>
+                <p>Frank Kalungi is a research scientist passionate about artificial intelligence and biotechnology. As an independent developer, I build web, mobile, and desktop applications using HTML, CSS, JavaScript, Python, Django, Kivy, and Tkinter.</p>
+                <p>At the National Agricultural Research Laboratories (NARL) in Kawanda, Uganda, I work as a genome engineer. I developed the first gene-edited East African Highland bananas using CRISPR/Cas9, differential gene expression, molecular cloning, HPLC analysis, and microbiology.</p>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I am passionate about technology and its potential to revolutionize humanity's future. As a self-taught programmer with over 10 years of experience, I specialize in designing web, mobile, and desktop software. I am particularly drawn to applying programming to biological sciences to accelerate drug, vaccine, and disease-resistant crop development.</p>
+            <p>Through technology, I aim to contribute to Africa's growing biotechnology industry by developing bioinformatics software and pipelines for drug design and genome engineering.</p>
+            
+            <h3>Education & Professional Experience</h3>
+            <p>MSc. Biochemistry and BSc. Biotechnology from Makerere University.</p>
+            <p>Current: Research Fellow (Genome Editing) at NARL, Uganda.</p>
+            <p>Previous roles: Quality Control Officer at Abacus Parenteral Drugs Limited; Bioprocess Engineer at Coca-Cola Beverages Africa.</p>
+        </section>
+
+        <section id="projects">
+            <h2>Projects & Publications</h2>
+            <p>Selected publications from completed projects:</p>
+            <ul class="publications">
+                <li><a href="https://link.springer.com/article/10.1007/s40203-023-00162-4" target="_blank">Network pharmacology and molecular docking studies of quercetin as a potential treatment for prostate cancer</a></li>
+                <li><a href="https://www.researchsquare.com/article/rs-3685735/v1" target="_blank">Unraveling the molecular mechanisms and targets in the treatment of rheumatoid arthritis using curcumin</a></li>
+                <li><a href="https://www.taylorfrancis.com/chapters/edit/10.1201/9781003460336-39/kava-piper-methysticum-forst-piperaceae-frank-kalungi-godwin-anywar" target="_blank">Kava (Piper methysticum) as a hallucinogenic plant</a></li>
+            </ul>
+
+            <h3>Ongoing Projects</h3>
+            <ul>
+                <li>Establishing a CRISPR/Cas9 genome editing system in East African Highland banana</li>
+                <li>Identification of sodium glucose transporter protein-2 inhibitors via machine learning</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Feel free to reach out via 
+                <a href="mailto:frankkalungi15@gmail.com">email</a> 
+                or connect on 
+                <a href="https://www.linkedin.com/in/kalungi-frank-173588ba/" target="_blank">LinkedIn</a>.
             </p>
         </section>
-        <section id="contact">
-            <h1>Contact</h1>
-            <p>Feel free to reach out via <a href="mailto:frankkalungi15@gmail.com">email</a> or connect with me on <a href="https://www.linkedin.com/in/kalungi-frank-173588ba/">LinkedIn</a>.</p>
-        </section>
-    </div>
+    </main>
+
+    <footer>
+        <p>&copy; <?php echo date("Y"); ?> Frank Kalungi. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Hamburger menu toggle
+        const toggle = document.querySelector('.menu-toggle');
+        const navUl = document.querySelector('nav ul');
+        
+        toggle.addEventListener('click', () => {
+            navUl.classList.toggle('active');
+            const expanded = toggle.getAttribute('aria-expanded') === 'true';
+            toggle.setAttribute('aria-expanded', !expanded);
+            toggle.innerHTML = expanded ? '<i class="fas fa-bars"></i>' : '<i class="fas fa-times"></i>';
+        });
+
+        // Close menu when clicking a link (mobile)
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navUl.classList.remove('active');
+                    toggle.setAttribute('aria-expanded', 'false');
+                    toggle.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+        });
+
+        // Highlight active section (optional enhancement)
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(sec => {
+                const top = sec.offsetTop - 100;
+                const height = sec.offsetHeight;
+                if (pageYOffset >= top && pageYOffset < top + height) {
+                    document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+                    document.querySelector(`nav a[href="#${sec.id}"]`)?.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
